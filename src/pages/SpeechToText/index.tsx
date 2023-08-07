@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import * as S from './styles';
 
 const SpeechToText: React.FC = () => {
   const [isListening, setIsListening] = useState(false);
@@ -10,7 +11,7 @@ const SpeechToText: React.FC = () => {
         window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognition = new SpeechRecognition();
       console.log('recognition: ', recognition);
-      recognition.lang = 'en-US';
+      recognition.lang = 'ko-KR';
 
       recognition.onstart = () => {
         console.log('Listening...');
@@ -39,10 +40,10 @@ const SpeechToText: React.FC = () => {
   };
   return (
     <>
-      <button onClick={toggleListening}>
+      <S.Button onClick={toggleListening}>
         {isListening ? 'Stop Listening' : 'Start Listening'}
-      </button>
-      <p>{transcript}</p>
+      </S.Button>
+      <S.Paragraph>{transcript}</S.Paragraph>
     </>
   );
 };
