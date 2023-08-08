@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import * as S from './styles';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SpeechToText: React.FC = () => {
   const navigate = useNavigate();
@@ -20,10 +21,7 @@ const SpeechToText: React.FC = () => {
       }
       console.log('recognition: ', recognition);
       recognition.lang = 'ko-KR';
-<<<<<<< HEAD
-=======
       // recognition.lang = 'en-US';
->>>>>>> 1c0673b03a031aacf1742dd27a124eed48be81cf
 
       recognition.onstart = () => {
         console.log('Listening...');
